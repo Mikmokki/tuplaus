@@ -1,0 +1,13 @@
+CREATE TABLE player (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  balance MONEY NOT NULL DEFAULT 0
+);
+CREATE TABLE game_event (
+  timestamp TIMESTAMP NOT NULL PRIMARY KEY DEFAULT NOW(),
+  player_id INT NOT NULL,
+  stake MONEY NOT NULL,
+  choice TEXT NOT NULL,
+  card TEXT NOT NULL,
+  win_amount MONEY NOT NULL
+);
